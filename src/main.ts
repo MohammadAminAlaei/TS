@@ -1,352 +1,352 @@
-// abstract class Car {
-//   constructor(
-//     public model: string,
-//     protected founder: string = "",
-//     private year: number = 2016
-//   ) {}
+abstract class Car {
+  constructor(
+    public model: string,
+    protected founder: string = "",
+    private year: number = 2016
+  ) {}
 
-//   speed(speed?: number) {
-//     if (speed) return `${speed} KM/H`;
-//     return `${this.year * 100} KM/H`;
-//   }
+  speed(speed?: number) {
+    if (speed) return `${speed} KM/H`;
+    return `${this.year * 100} KM/H`;
+  }
 
-//   set setFounder(getFounder: string) {
-//     this.founder = getFounder;
-//   }
+  set setFounder(getFounder: string) {
+    this.founder = getFounder;
+  }
 
-//   get getInfo() {
-//     return {
-//       year: this.year,
-//       model: this.model,
-//       founder: this.founder,
-//     };
-//   }
+  get getInfo() {
+    return {
+      year: this.year,
+      model: this.model,
+      founder: this.founder,
+    };
+  }
 
-//   // const myFoo: myF = foo(name: string)
+  // const myFoo: myF = foo(name: string)
 
-//   abstract foo(): number;
+  abstract foo(): number;
 
-//   testAbstarct(): number {
-//     const speed: number = this.foo();
-//     return speed * 10;
-//   }
-// }
+  testAbstarct(): number {
+    const speed: number = this.foo();
+    return speed * 10;
+  }
+}
 
-// class IranKhodro extends Car {
+class IranKhodro extends Car {
 
-//   constructor(public model: string, public speeder: number) {
-//     super(model);
-//   }
+  constructor(public model: string, public speeder: number) {
+    super(model);
+  }
 
-//   run() {
-//     return this.founder;
-//   }
+  run() {
+    return this.founder;
+  }
 
-//   foo() {
-//     return this.speeder;
-//   }
-// }
+  foo() {
+    return this.speeder;
+  }
+}
 
-// const newKhodro = new IranKhodro("DENA+", 99).testAbstarct();
+const newKhodro = new IranKhodro("DENA+", 99).testAbstarct();
 
-// console.log(newKhodro);
+console.log(newKhodro);
 
-// class Car {
-//   static model: string = "BMW1";
-//   constructor(model: string) {
-//     Car.model = model;
-//   }
+class Car {
+  static model: string = "BMW1";
+  constructor(model: string) {
+    Car.model = model;
+  }
 
-//   showModel() {
-//     return Car.model;
-//   }
+  showModel() {
+    return Car.model;
+  }
 
-//   static showModel() {
-//     return Car.model;
-//   }
-// }
+  static showModel() {
+    return Car.model;
+  }
+}
 
-// console.log(Car.showModel());
+console.log(Car.showModel());
 
-// class Car {
-//   readonly model: string;
+class Car {
+  readonly model: string;
 
-//   constructor(model: string) {
-//     this.model = model;
-//   }
+  constructor(model: string) {
+    this.model = model;
+  }
 
-//   set changeModel(model: string) {}
-// }
+  set changeModel(model: string) {}
+}
 
-// const car1 = new Car("BMW");
+const car1 = new Car("BMW");
 
-// console.log(car1.model);
+console.log(car1.model);
 
-//Singlton Design Pattern
+Singlton Design Pattern
 
-// class Car {
-//   private static instance: Car;
-//   private constructor(public model?: string, public newCar?: boolean) {}
+class Car {
+  private static instance: Car;
+  private constructor(public model?: string, public newCar?: boolean) {}
 
-//   public static getInstance(): Car {
-//     // if (Car.instance) throw new Error("Instance Created Before");
-//     if (!Car.instance) Car.instance = new Car();
+  public static getInstance(): Car {
+    // if (Car.instance) throw new Error("Instance Created Before");
+    if (!Car.instance) Car.instance = new Car();
 
-//     return Car.instance;
-//   }
+    return Car.instance;
+  }
 
-//   setProperties(model: string, newCar: boolean) {
-//     if (this.model || !!this.newCar) return;
-//     this.model = model;
-//     this.newCar = newCar;
-//   }
-// }
+  setProperties(model: string, newCar: boolean) {
+    if (this.model || !!this.newCar) return;
+    this.model = model;
+    this.newCar = newCar;
+  }
+}
 
-// const car1 = Car.getInstance();
-// car1.setProperties("BMW", false);
+const car1 = Car.getInstance();
+car1.setProperties("BMW", false);
 
-// const car2 = Car.getInstance();
-// car2.setProperties("BMWwwww", false);
+const car2 = Car.getInstance();
+car2.setProperties("BMWwwww", false);
 
-// console.log(car2);
+console.log(car2);
 
-// class Car {
-//   private static instance: Car;
-//   private constructor() {}
+class Car {
+  private static instance: Car;
+  private constructor() {}
 
-//   static getInstance(): Car {
-//     if (!Car.instance) Car.instance = new Car();
-//     return Car.instance;
-//   }
-// }
+  static getInstance(): Car {
+    if (!Car.instance) Car.instance = new Car();
+    return Car.instance;
+  }
+}
 
-// const car1 = Car.getInstance();
-// const car2 = Car.getInstance();
+const car1 = Car.getInstance();
+const car2 = Car.getInstance();
 
-// console.log(car1===car2)
+console.log(car1===car2)
 
-//interface
+interface
 
-// interface myObj {
-//   readonly name: string;
-//   age: number | null;
-//   [props: string]: string | number | null;
-// }
+interface myObj {
+  readonly name: string;
+  age: number | null;
+  [props: string]: string | number | null;
+}
 
-// type myType = {
-//   readonly name?: string;
-//   age?: number | null;
-// };
+type myType = {
+  readonly name?: string;
+  age?: number | null;
+};
 
-// function testInterFace(object: myObj) {
-//   return object.name;
-// }
+function testInterFace(object: myObj) {
+  return object.name;
+}
 
-// const myObj = { name: "obj", age: null };
+const myObj = { name: "obj", age: null };
 
-//
 
-// interface Person {
-//   name: string;
-//   age: number;
-//   info(): string;
-// }
 
-// class Amin implements Person {
-//   constructor(public name: string, public age: number) {}
+interface Person {
+  name: string;
+  age: number;
+  info(): string;
+}
 
-//   info(): string {
-//     return this.name;
-//   }
-// }
+class Amin implements Person {
+  constructor(public name: string, public age: number) {}
 
-// class Parisa {}
+  info(): string {
+    return this.name;
+  }
+}
 
-// class Mahmood {}
+class Parisa {}
 
-// const newPerson: Person = new Amin("amin", 21);
+class Mahmood {}
 
-// generic
+const newPerson: Person = new Amin("amin", 21);
 
-// function Test<T>(name: T[]): T[] {
-//   return name;
-// }
+generic
 
-// console.log(Test(['1', 2, 3, '4']));
+function Test<T>(name: T[]): T[] {
+  return name;
+}
 
-// interface myFInterface<T> {
-//   (data: T): unknown;
-// }
+console.log(Test(['1', 2, 3, '4']));
 
-// const myF: myFInterface<number> = (name: number): unknown => name;
+interface myFInterface<T> {
+  (data: T): unknown;
+}
 
-// interface myTest<T extends number | string> {
-//   name: T;
-//   age: T;
-//   // sayAge(): T;
-// }
+const myF: myFInterface<number> = (name: number): unknown => name;
 
-// const thisTest = (data: myTest<number>) => data.name;
+interface myTest<T extends number | string> {
+  name: T;
+  age: T;
+  // sayAge(): T;
+}
 
-// console.log(thisTest({ name: 46, age: 56 }));
+const thisTest = (data: myTest<number>) => data.name;
 
-// class Generic<T extends number | string> {
-//   constructor(public list: T[]) {}
+console.log(thisTest({ name: 46, age: 56 }));
 
-//   addItem(item: T): void {
-//     this.list.push(item);
-//   }
+class Generic<T extends number | string> {
+  constructor(public list: T[]) {}
 
-//   getItem(index: number): T {
-//     return this.list[index];
-//   }
-// }
+  addItem(item: T): void {
+    this.list.push(item);
+  }
 
-// const genericTest = new Generic<number>([1, 2, 3, 4]);
+  getItem(index: number): T {
+    return this.list[index];
+  }
+}
 
-// genericTest.addItem(99991);
-// genericTest.addItem(9999);
+const genericTest = new Generic<number>([1, 2, 3, 4]);
 
-// console.log(genericTest.getItem(genericTest.list.length - 1));
+genericTest.addItem(99991);
+genericTest.addItem(9999);
 
-// class Generic<T extends number | string, U extends number | boolean> {
-//   constructor(public list: T[], protected age: U) {}
-// }
+console.log(genericTest.getItem(genericTest.list.length - 1));
 
-// let genericFunc: <T extends number | string, U extends object | boolean>(
-//   name: T,
-//   age: U
-// ) => void = <T, U>(name: T, age: U): void => {
-//   console.log(name ,age);
-// };
+class Generic<T extends number | string, U extends number | boolean> {
+  constructor(public list: T[], protected age: U) {}
+}
 
-// console.log(genericFunc<number, boolean>(56, false));
+let genericFunc: <T extends number | string, U extends object | boolean>(
+  name: T,
+  age: U
+) => void = <T, U>(name: T, age: U): void => {
+  console.log(name ,age);
+};
 
-// decorators
+console.log(genericFunc<number, boolean>(56, false));
 
-// function auth<T extends { new (...args: any[]): any }>(constructor: T) {
-//   return class extends constructor {
-//     auth = false;
-//   };
-// }
+decorators
 
-// @auth
-// class User {
-//   name = "amin";
-// }
+function auth<T extends { new (...args: any[]): any }>(constructor: T) {
+  return class extends constructor {
+    auth = false;
+  };
+}
 
-// const user1 = new User();
+@auth
+class User {
+  name = "amin";
+}
 
-// console.log(user1);
+const user1 = new User();
 
-// multi decorator
+console.log(user1);
 
-// function first<T extends { new (...args: any[]): any }>(constructor: T) {
-//   console.log("constructor firstProperty", constructor);
-//   // console.log("constructor firstProperty");
-//   return class extends constructor {
-//     property = "First Property";
-//   };
-// }
+multi decorator
 
-// function second<T extends { new (...args: any[]): any }>(constructor: T) {
-//   // console.log("constructor secondroperty", constructor);
-//   return class extends constructor {
-//     property = "Second Property";
-//   };
-// }
+function first<T extends { new (...args: any[]): any }>(constructor: T) {
+  console.log("constructor firstProperty", constructor);
+  // console.log("constructor firstProperty");
+  return class extends constructor {
+    property = "First Property";
+  };
+}
 
-// @first
-// @second
-// class User {
-//   name = "amin";
-// }
+function second<T extends { new (...args: any[]): any }>(constructor: T) {
+  // console.log("constructor secondroperty", constructor);
+  return class extends constructor {
+    property = "Second Property";
+  };
+}
 
-// const user1 = new User();
+@first
+@second
+class User {
+  name = "amin";
+}
 
-// console.log(user1);
+const user1 = new User();
 
-//decorator factory
-// class decorators and send parameters
+console.log(user1);
 
-// function decoratorsFactory(param: boolean) {
-//   return function auth<T extends { new (...args: any[]): any }>(constructor: T) {
-//     // console.log("constructor secondroperty", constructor);
-//     return class extends constructor {
-//       property = "Second Property";
-//       auth = param;
-//     };
-//   };
-// }
+decorator factory
+class decorators and send parameters
 
-// @decoratorsFactory(false)
-// class User {
-//   name = "amin";
-// }
+function decoratorsFactory(param: boolean) {
+  return function auth<T extends { new (...args: any[]): any }>(constructor: T) {
+    // console.log("constructor secondroperty", constructor);
+    return class extends constructor {
+      property = "Second Property";
+      auth = param;
+    };
+  };
+}
 
-// const user1 = new User();
+@decoratorsFactory(false)
+class User {
+  name = "amin";
+}
 
-// console.log(user1);
+const user1 = new User();
 
-// mehod decarator - decorator factory
+console.log(user1);
 
-// function changable(value:boolean) {
-//   return function(target:any, propertyKey: any, descriptor: PropertyDescriptor) {
-//     console.log(target, propertyKey, target[propertyKey])
-//     !value ? descriptor.writable = false :  descriptor.writable = true;
-//   }
-// }
+mehod decarator - decorator factory
 
-// class User {
-//   private name = "amin";
-//   // constructor(private name: string) {}
+function changable(value:boolean) {
+  return function(target:any, propertyKey: any, descriptor: PropertyDescriptor) {
+    console.log(target, propertyKey, target[propertyKey])
+    !value ? descriptor.writable = false :  descriptor.writable = true;
+  }
+}
 
-//   @changable(false)
-//   getUserName() {
-//     return this.name;
-//   }
-// }
+class User {
+  private name = "amin";
+  // constructor(private name: string) {}
 
-// const myUser = new User();
-// myUser.getUserName = () => "TEST";
-// console.log(myUser.getUserName());
+  @changable(false)
+  getUserName() {
+    return this.name;
+  }
+}
 
+const myUser = new User();
+myUser.getUserName = () => "TEST";
+console.log(myUser.getUserName());
 
-// property decorator and parameter decorator
 
-// function emoji(){
-//   return function(target:any, key: string | symbol) {
-//     let val = target[key]
+property decorator and parameter decorator
 
-//     Object.defineProperty(target, key, {
-//       get: ()=> val,
-//       set: (newValue)=> {
-//         val = newValue
-//       },
-//       configurable: true,
-//       enumerable:true
-//     })
-//   }
-// }
+function emoji(){
+  return function(target:any, key: string | symbol) {
+    let val = target[key]
 
-// function log(target:Object, methodKey: string | symbol, parameterIndex: number) {
-//   console.log(target, methodKey, parameterIndex)
-// }
+    Object.defineProperty(target, key, {
+      get: ()=> val,
+      set: (newValue)=> {
+        val = newValue
+      },
+      configurable: true,
+      enumerable:true
+    })
+  }
+}
 
-// class IceCream {
+function log(target:Object, methodKey: string | symbol, parameterIndex: number) {
+  console.log(target, methodKey, parameterIndex)
+}
 
-//   @emoji()
-//   flavor = 'vanilla'
+class IceCream {
 
-//   getInfo(@log name: string){}
-// }
+  @emoji()
+  flavor = 'vanilla'
 
-// const myIceCream = new IceCream();
+  getInfo(@log name: string){}
+}
 
-// // console.log(myIceCream.flavor)
-// console.log(myIceCream.getInfo('amin'));
+const myIceCream = new IceCream();
 
-// module - webpack
+// console.log(myIceCream.flavor)
+console.log(myIceCream.getInfo('amin'));
+
+module - webpack
 
 import sayHi from './myModule';
 
