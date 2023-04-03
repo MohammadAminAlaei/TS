@@ -82,7 +82,7 @@ const car1 = new Car("BMW");
 
 console.log(car1.model);
 
-Singlton Design Pattern
+// Singlton Design Pattern
 
 class Car {
   private static instance: Car;
@@ -125,7 +125,7 @@ const car2 = Car.getInstance();
 
 console.log(car1===car2)
 
-interface
+// interface
 
 interface myObj {
   readonly name: string;
@@ -166,7 +166,7 @@ class Mahmood {}
 
 const newPerson: Person = new Amin("amin", 21);
 
-generic
+// Generic
 
 function Test<T>(name: T[]): T[] {
   return name;
@@ -222,7 +222,7 @@ let genericFunc: <T extends number | string, U extends object | boolean>(
 
 console.log(genericFunc<number, boolean>(56, false));
 
-decorators
+// decorators
 
 function auth<T extends { new (...args: any[]): any }>(constructor: T) {
   return class extends constructor {
@@ -239,7 +239,7 @@ const user1 = new User();
 
 console.log(user1);
 
-multi decorator
+// multi decorator
 
 function first<T extends { new (...args: any[]): any }>(constructor: T) {
   console.log("constructor firstProperty", constructor);
@@ -266,7 +266,7 @@ const user1 = new User();
 
 console.log(user1);
 
-decorator factory
+// decorator factory
 class decorators and send parameters
 
 function decoratorsFactory(param: boolean) {
@@ -288,7 +288,7 @@ const user1 = new User();
 
 console.log(user1);
 
-mehod decarator - decorator factory
+// mehod decarator - decorator factory
 
 function changable(value:boolean) {
   return function(target:any, propertyKey: any, descriptor: PropertyDescriptor) {
@@ -312,7 +312,7 @@ myUser.getUserName = () => "TEST";
 console.log(myUser.getUserName());
 
 
-property decorator and parameter decorator
+// property decorator and parameter decorator
 
 function emoji(){
   return function(target:any, key: string | symbol) {
@@ -346,7 +346,7 @@ const myIceCream = new IceCream();
 // console.log(myIceCream.flavor)
 console.log(myIceCream.getInfo('amin'));
 
-module - webpack
+// module - webpack
 
 import sayHi from './myModule';
 
